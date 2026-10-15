@@ -19,7 +19,7 @@ export default function Hero() {
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-brand-dark/70 sm:text-lg lg:mx-0">
-            Somos ELECTROPATRIMONIO, una cuadrilla de 3 electricistas certificados por la SEC, especializados en
+            Somos ELECTROPATRIMONIO, una cuadrilla de electricistas certificados por la SEC, especializada en
             instalaciones domiciliarias de baja tensión.
           </p>
 
