@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { EB_Garamond, Oswald } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { defaultSocialImage, siteUrl } from "@/lib/seo";
 import "./globals.css";
 
 const ebGaramond = EB_Garamond({
@@ -18,9 +19,33 @@ const oswald = Oswald({
 
 // Metadatos SEO
 export const metadata: Metadata = {
-  title: "ELECTROPATRIMONIO | Cuadrilla Eléctrica Certificada por la SEC",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "ELECTROPATRIMONIO | Electricistas certificados por la SEC",
+    template: "%s | ELECTROPATRIMONIO",
+  },
   description:
-    "Servicios eléctricos domiciliarios en baja tensión. Instalaciones de alumbrado, calefacción, fuerza motriz y mantenimiento. Certificados por la SEC en Chile.",
+    "Servicios eléctricos domiciliarios de baja tensión: alumbrado, calefacción, fuerza motriz y mantenimiento. Electricistas certificados por la SEC en Chile.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: "ELECTROPATRIMONIO | Electricistas certificados por la SEC",
+    description:
+      "Servicios eléctricos domiciliarios de baja tensión: alumbrado, calefacción, fuerza motriz y mantenimiento. Electricistas certificados por la SEC en Chile.",
+    siteName: "ELECTROPATRIMONIO",
+    locale: "es_CL",
+    type: "website",
+    images: [defaultSocialImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ELECTROPATRIMONIO | Electricistas certificados por la SEC",
+    description:
+      "Servicios eléctricos domiciliarios de baja tensión: alumbrado, calefacción, fuerza motriz y mantenimiento. Electricistas certificados por la SEC en Chile.",
+    images: [defaultSocialImage],
+  },
 };
 
 export default function RootLayout({

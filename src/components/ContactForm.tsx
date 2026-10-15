@@ -30,7 +30,7 @@ export default function ContactForm() {
     <section className="bg-brand-green-light py-20 sm:py-24">
       <div className="mx-auto max-w-2xl px-4 sm:px-6">
         <div className="text-center">
-          <h2 className="text-3xl font-bold sm:text-4xl">Cotiza tu proyecto</h2>
+          <h1 className="text-3xl font-bold sm:text-4xl">Cotiza tu proyecto</h1>
           <p className="mt-4 text-brand-dark/70">Cuéntanos qué necesitas y te contactaremos a la brevedad.</p>
         </div>
 
@@ -52,26 +52,26 @@ export default function ContactForm() {
 
             <div>
               <label htmlFor="name" className="text-sm font-medium">Nombre</label>
-              <input id="name" name="name" type="text" defaultValue={values?.name} className={inputClass} placeholder="Tu nombre" />
+              <input id="name" name="name" type="text" maxLength={120} required defaultValue={values?.name} className={inputClass} placeholder="Tu nombre" />
               <FieldError messages={errors?.name} />
             </div>
 
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
                 <label htmlFor="email" className="text-sm font-medium">Email</label>
-                <input id="email" name="email" type="email" defaultValue={values?.email} className={inputClass} placeholder="tu@correo.cl" />
+                <input id="email" name="email" type="email" maxLength={254} required defaultValue={values?.email} className={inputClass} placeholder="tu@correo.cl" />
                 <FieldError messages={errors?.email} />
               </div>
               <div>
                 <label htmlFor="phone" className="text-sm font-medium">Teléfono</label>
-                <input id="phone" name="phone" type="tel" defaultValue={values?.phone} className={inputClass} placeholder="+56 9 1234 5678" />
+                <input id="phone" name="phone" type="tel" maxLength={30} required defaultValue={values?.phone} className={inputClass} placeholder="+56 9 1234 5678" />
                 <FieldError messages={errors?.phone} />
               </div>
             </div>
 
             <div>
               <label htmlFor="serviceType" className="text-sm font-medium">Tipo de Servicio</label>
-              <select id="serviceType" name="serviceType" defaultValue={values?.serviceType ?? ""} className={inputClass}>
+              <select id="serviceType" name="serviceType" required defaultValue={values?.serviceType ?? ""} className={inputClass}>
                 <option value="" disabled>Selecciona una opción</option>
                 {serviceOptions.map((o) => (
                   <option key={o} value={o}>{o}</option>
@@ -82,8 +82,13 @@ export default function ContactForm() {
 
             <div>
               <label htmlFor="message" className="text-sm font-medium">Mensaje</label>
-              <textarea id="message" name="message" rows={5} defaultValue={values?.message} className={inputClass} placeholder="Describe brevemente el trabajo que necesitas..." />
+              <textarea id="message" name="message" rows={5} minLength={10} maxLength={3000} required defaultValue={values?.message} className={inputClass} placeholder="Describe brevemente el trabajo que necesitas..." />
               <FieldError messages={errors?.message} />
+            </div>
+
+            <div className="absolute left-[-9999px]" aria-hidden="true">
+              <label htmlFor="website">Deja este campo vacío</label>
+              <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
             </div>
 
             <button

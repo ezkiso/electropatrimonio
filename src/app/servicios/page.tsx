@@ -1,6 +1,14 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Services from "@/components/Services";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: "Servicios eléctricos domiciliarios",
+  description:
+    "Instalaciones de alumbrado, calefacción, fuerza motriz y mantenimiento eléctrico domiciliario, dentro del alcance de la certificación SEC.",
+  path: "/servicios",
+});
 
 export default function ServicesPage() {
   return (

@@ -51,7 +51,7 @@ export default function Footer() {
           </div>
           <p className="mt-3 inline-flex items-center gap-2 text-sm text-white/80">
             <ShieldCheck className="h-4 w-4" />
-            Cuadrilla Certificada SEC
+            Cuadrilla certificada por la SEC
           </p>
         </div>
 

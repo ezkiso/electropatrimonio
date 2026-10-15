@@ -11,7 +11,7 @@ export default function Hero() {
           <div className="text-center lg:text-left">
           <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-brand-green shadow-soft">
             <Zap className="h-4 w-4" />
-            Cuadrilla Certificada SEC
+            Cuadrilla certificada por la SEC
           </span>
 
           <h1 className="mt-6 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">

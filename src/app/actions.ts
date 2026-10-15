@@ -11,15 +11,32 @@ if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
 
 // Esquema de validación del formulario
 const leadSchema = z.object({
-  name: z.string().trim().min(2, "Ingresa tu nombre (mínimo 2 caracteres)."),
-  email: z.string().trim().email("Ingresa un correo válido."),
+  name: z
+    .string()
+    .trim()
+    .min(2, "Ingresa tu nombre (mínimo 2 caracteres).")
+    .max(120, "El nombre no puede superar los 120 caracteres."),
+  email: z
+    .string()
+    .trim()
+    .max(254, "El correo no puede superar los 254 caracteres.")
+    .email("Ingresa un correo válido."),
   phone: z
     .string()
     .trim()
     .min(8, "Ingresa un teléfono válido.")
+    .max(30, "El teléfono no puede superar los 30 caracteres.")
     .regex(/^[+\d\s()-]+$/, "El teléfono solo puede contener números, +, espacios y guiones."),
-  serviceType: z.string().min(1, "Selecciona un tipo de servicio."),
-  message: z.string().trim().min(10, "Cuéntanos un poco más (mínimo 10 caracteres)."),
+  serviceType: z.enum([
+    "Instalaciones de Alumbrado",
+    "Calefacción y Fuerza Motriz",
+    "Trabajos Permitidos (reparación, mantenimiento, documentación)",
+  ], { message: "Selecciona un tipo de servicio válido." }),
+  message: z
+    .string()
+    .trim()
+    .min(10, "Cuéntanos un poco más (mínimo 10 caracteres).")
+    .max(3000, "El mensaje no puede superar los 3000 caracteres."),
 });
 
 // Escapa HTML para evitar inyección en el correo
@@ -43,6 +60,13 @@ export async function submitLead(
   _prevState: LeadState | null,
   formData: FormData
 ): Promise<LeadState> {
+  if (String(formData.get("website") ?? "").trim()) {
+    return {
+      success: false,
+      errors: { _form: ["No pudimos procesar tu solicitud."] },
+    };
+  }
+
   const raw = {
     name: String(formData.get("name") ?? ""),
     email: String(formData.get("email") ?? ""),
