@@ -27,31 +27,31 @@ export default function Hero() {
 
           <div className="relative mx-auto flex w-full max-w-sm items-center justify-center">
             <div className="absolute inset-8 rounded-full bg-brand-orange/10 blur-3xl" aria-hidden="true" />
-            <div className="relative rounded-[2rem] border border-brand-green/10 bg-white p-6 shadow-soft sm:p-8">
-            <LogoMark
-              alt="Emblema de ELECTROPATRIMONIO, instalaciones eléctricas domiciliarias"
-              className="mx-auto h-52 w-52 shadow-lg ring-4 ring-white sm:h-64 sm:w-64"
-            />
-            <p className="mt-5 text-center text-sm font-semibold text-brand-dark">
-              ELECTRO<span className="text-brand-orange">PATRIMONIO</span>
-            </p>
-            <p className="mt-1 text-center text-xs font-medium tracking-wide text-brand-dark/60">
-              SEGURIDAD · CONFIANZA · CERTIFICACIÓN SEC
-            </p>
+            <div className="relative rounded-[2rem] border border-brand-green/10 bg-white p-4 shadow-soft sm:p-8">
+              <LogoMark
+                alt="Emblema de ELECTROPATRIMONIO, instalaciones eléctricas domiciliarias"
+                className="mx-auto h-44 w-44 shadow-lg ring-4 ring-white sm:h-64 sm:w-64"
+              />
+              <p className="mt-5 text-center text-sm font-semibold text-brand-dark">
+                ELECTRO<span className="text-brand-orange">PATRIMONIO</span>
+              </p>
+              <p className="mt-1 text-center text-xs font-medium tracking-wide text-brand-dark/60">
+                SEGURIDAD · CONFIANZA · CERTIFICACIÓN SEC
+              </p>
             </div>
           </div>
         </div>
 
         <div
           aria-label="Espacio reservado para el carrusel de imágenes de proyectos"
-          className="relative mx-auto mt-10 flex aspect-[16/7] min-h-52 max-w-5xl items-center justify-center overflow-hidden rounded-3xl border border-brand-green/15 bg-brand-green-light shadow-soft sm:mt-12 sm:min-h-72"
+          className="relative mx-auto mt-10 flex aspect-[4/3] w-full max-w-5xl items-center justify-center overflow-hidden rounded-3xl border border-brand-green/15 bg-brand-green-light shadow-soft sm:mt-12 sm:aspect-[16/7]"
         >
-          <div className="absolute inset-3 rounded-2xl border border-dashed border-brand-green/25" aria-hidden="true" />
-          <div className="relative px-6 text-center">
-            <p className="font-heading text-2xl font-semibold uppercase tracking-wider text-brand-green/70 sm:text-3xl">
+          <div className="absolute inset-2 rounded-2xl border border-dashed border-brand-green/25 sm:inset-3" aria-hidden="true" />
+          <div className="relative px-4 text-center sm:px-6">
+            <p className="font-heading text-xl font-semibold uppercase tracking-wide text-brand-green/70 sm:text-3xl sm:tracking-wider">
               Carrusel de proyectos
             </p>
-            <p className="mt-2 text-base text-brand-dark/60 sm:text-lg">
+            <p className="mt-2 text-sm text-brand-dark/60 sm:text-lg">
               Aquí podrás mostrar imágenes de tus trabajos
             </p>
           </div>

@@ -66,11 +66,11 @@ export default function Footer() {
             electropatrimonio@outlook.com
           </a>
           <a
-            href="tel:+56900000000"
+            href="tel:+56933015465"
             className="flex items-center gap-2 transition hover:text-white"
           >
             <Phone className="h-4 w-4 shrink-0" />
-            +56 9 0000 0000
+            +56 9 3301 5465
           </a>
         </div>
 

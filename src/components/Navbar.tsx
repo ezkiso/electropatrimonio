@@ -13,8 +13,7 @@ const links = [
   { href: "/contacto", label: "Contacto" },
 ];
 
-// Número de WhatsApp de ejemplo: reemplázalo por el real
-const WHATSAPP_URL = "https://wa.me/56900000000";
+const WHATSAPP_URL = "https://wa.me/56933015465";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);

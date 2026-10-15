@@ -14,7 +14,7 @@ export default function About() {
           presupuestos claros.
         </p>
 
-        <div className="mt-10 grid grid-cols-3 gap-4">
+        <div className="mt-10 grid gap-4 sm:grid-cols-3">
           <div className="rounded-2xl bg-brand-green-light p-5">
             <div className="text-3xl font-extrabold text-brand-green">3</div>
             <div className="mt-1 text-xs text-brand-dark/70">Electricistas certificados</div>
