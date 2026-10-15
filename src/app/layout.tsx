@@ -18,9 +18,9 @@ const oswald = Oswald({
 
 // Metadatos SEO
 export const metadata: Metadata = {
-  title: "ELECTROPATRIMONIO | Cuadrilla Eléctrica Certificada SEC",
+  title: "ELECTROPATRIMONIO | Cuadrilla Eléctrica Certificada por la SEC",
   description:
-    "Servicios eléctricos domiciliarios en baja tensión. Instalaciones de alumbrado, calefacción, fuerza motriz y mantenimiento. Certificados SEC en Chile.",
+    "Servicios eléctricos domiciliarios en baja tensión. Instalaciones de alumbrado, calefacción, fuerza motriz y mantenimiento. Certificados por la SEC en Chile.",
 };
 
 export default function RootLayout({
