@@ -4,7 +4,7 @@ import { ArrowRight, BriefcaseBusiness, Users, MessageCircle } from "lucide-reac
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "Electricistas certificados por la SEC",
+  title: "ELECTROPATRIMONIO | Electricistas certificados por la SEC",
   description:
     "Soluciones eléctricas domiciliarias de baja tensión, instalaciones y mantenimiento. Conoce nuestros servicios y solicita una cotización.",
   path: "/",
